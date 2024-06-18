@@ -23,19 +23,8 @@ void setup() {
     while (1) {
       delay(10);
     }
-  }
+  }   
   Serial.println("MPU6050 Found!");
-  // for(caliNum=0; caliNum<2000; caliNum++) {
-  //   sensors_event_t a, g, temp;
-  //   mpu.getEvent(&a, &g, &temp);
-  //   calix += g.gyro.x;
-  //   caliy += g.gyro.y;
-  //   caliz += g.gyro.z;
-  //   delay(1);
-  // }
-  // calix /= 2000;
-  // caliy /= 2000;
-  // caliz /= 2000;
   SerialBT.begin("ESP32Test");
   Serial.println("Pair device to ESP32Test");
   while(!SerialBT.available()) {

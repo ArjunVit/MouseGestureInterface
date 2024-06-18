@@ -63,40 +63,6 @@ def analyze_movement():
                 right_double += 1
             pre_acc_x, pre_acc_y, pre_acc_z, pre_left, pre_right = acc_x, acc_y, acc_z, left_click, right_click
 
-# def move_mouse_with_acceleration(dev_y, dev_z, time_step):
-#     sensitivity = 50
-#     move_y = dev_y * sensitivity
-#     move_z = dev_z * sensitivity
-
-#     # Calculate velocity and displacement
-#     velocity_y = move_y * time_step
-#     velocity_z = move_z * time_step
-
-#     # Get current mouse position
-#     current_pos = pyautogui.position()
-
-#     # Calculate displacement
-#     displacement_y = int(velocity_y)
-#     displacement_z = int(velocity_z)
-
-#     # Move the mouse based on the displacement
-#     new_x = current_pos[0] + displacement_y
-#     new_y = current_pos[1] + displacement_z
-#     pyautogui.moveTo(new_x, new_y, duration=0)
-
-# def move_mouse_with_acceleration(dev_y, dev_z, time_step):
-#     sensitivity = 500
-#     global smoothed_acceleration_y, smoothed_acceleration_z
-#     smoothed_dev_y = smooth_acceleration(dev_y, smoothed_acceleration_y)
-#     smoothed_dev_z = smooth_acceleration(dev_z, smoothed_acceleration_z)
-#     move_y = smoothed_dev_y * sensitivity * time_step
-#     move_z = smoothed_dev_z * sensitivity * time_step
-#     pyautogui.moveRel(move_y, move_z)
-
-# def smooth_acceleration(acceleration, smoothed_acceleration, smoothing_factor=0.5):
-#     smoothed_acceleration = smoothed_acceleration * smoothing_factor + acceleration * (1 - smoothing_factor)
-#     return smoothed_acceleration
-
 def move_mouse_with_acceleration(acc_y, pre_acc_y, acc_z, pre_acc_z, time_step):
     sensitivity = 50
     global stop_acceleration_y, stop_acceleration_z
